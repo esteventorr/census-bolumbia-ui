@@ -1,0 +1,18 @@
+$button-padding: 10px 20px;
+$button-color: #fff;
+$button-bg-color: #007bff;
+
+.link-button {
+  padding: $button-padding;
+  color: $button-color;
+  background-color: $button-bg-color;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 4px;
+
+  &:hover {
+    background-color: darken($button-bg-color, 10%);
+    text-decoration: underline;
+  }
+}
