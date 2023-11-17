@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-hero',
@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./hero.component.scss']
 })
 export class HeroComponent {
+  @Input() backgroundImageUrl: string;
+  @Input() title: string;
+  @Input() subtitle: string;
+  @Input() link: string;
+  @Input() buttonText: string;
 
 }

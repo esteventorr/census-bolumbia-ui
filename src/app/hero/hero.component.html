@@ -1,1 +1,6 @@
-<p>hero works!</p>
+<div class="hero" [ngStyle]="{'background-image': 'url(' + backgroundImageUrl + ')'}">
+    <h1>{{ title }}</h1>
+    <p>{{ subtitle }}</p>
+    <a [routerLink]="link" class="hero-button">{{ buttonText }}</a>
+</div>
+
