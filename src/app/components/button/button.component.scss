@@ -1,0 +1,17 @@
+.btn {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+
+  &.btn-send {
+    background-color: #5cb85c;
+    color: white;
+  }
+
+  &.btn-finish {
+    background-color: #f0ad4e;
+    color: white;
+  }
+}

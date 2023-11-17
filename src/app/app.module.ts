@@ -3,28 +3,26 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LinkButtonComponent } from './link-button/link-button.component';
-import { ParagraphComponent } from './paragraph/paragraph.component';
-import { HeroComponent } from './hero/hero.component';
-import { SectionTitleComponent } from './section-title/section-title.component';
-import { CardComponent } from './card/card.component';
-import { ButtonComponent } from './button/button.component';
+import { ParagraphModule } from './components/paragraph/paragraph.module';
+import { ButtonModule } from './components/button/button.module';
+import { CardModule } from './components/card/card.module';
+import { HeroModule } from './components/hero/hero.module';
+import { LinkButtonModule } from './components/link-button/link-button.module';
+import { SectionTitleModule } from './components/section-title/section-title.module';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    LinkButtonComponent,
-    ParagraphComponent,
-    HeroComponent,
-    SectionTitleComponent,
-    CardComponent,
-    ButtonComponent
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ParagraphModule,
+    ButtonModule,
+    CardModule,
+    HeroModule,
+    LinkButtonModule,
+    SectionTitleModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
