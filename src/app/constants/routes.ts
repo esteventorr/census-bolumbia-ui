@@ -1,7 +1,8 @@
 export const ROUTES = {
-  LANDING: '/',
-  SIGNIN: '/about',
-  SIGNUP: '/contact',
-  FEEDBACK: '/projects',
-  CENSUS_FORM: '/projects/:id',
+  LANDING: '',
+  SIGNIN: 'signin',
+  SIGNUP: 'signup',
+  FEEDBACK: 'feedback',
+  CENSUS_FORM: 'census-form',
+  NOT_FOUND: '**',
 };
