@@ -1,11 +1,56 @@
-.center-container {
+:host {
+  display: block;
+}
+
+:host,
+:host * {
+  box-sizing: border-box;
+}
+
+.app {
+  &__content {
+    max-width: 1080px;
+    margin: auto;
+    height: calc(100vh - 75px);
+  }
+
+  &__header {
+    background-color: #fff;
+    border-bottom: 1px solid #ccc;
+    padding: 8px 0;
+  }
+
+  &__header-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1080px;
+    margin: auto;
+  }
+
+
+  &__logo {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh; // O ajusta según sea necesario para tu diseño
-  
-    .center-content {
-      text-align: center;
+    font-size: 24px;
+    padding: 8px;
+    & img {
+      margin-right: 8px;
+    }
+
+    & h2 {
+      margin: 0;
     }
   }
-  
+}
+
+.center-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .center-content {
+    text-align: center;
+  }
+}

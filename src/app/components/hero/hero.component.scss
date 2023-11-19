@@ -1,6 +1,16 @@
+:host {
+  display: block;
+}
+
+:host,
+:host * {
+  box-sizing: border-box;
+}
+
 .hero {
+  height: 60vh;
   background-size: cover;
-  background-position: center;
+  background-position: center center;
   text-align: center;
   padding: 100px 20px;
 

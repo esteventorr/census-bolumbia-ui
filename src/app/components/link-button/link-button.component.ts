@@ -8,5 +8,4 @@ import { Component, Input } from '@angular/core';
 export class LinkButtonComponent {
   @Input() link: string = '';
   @Input() text: string = '';
-  @Input() title: string = '';
 }

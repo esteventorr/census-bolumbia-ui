@@ -1,0 +1,12 @@
+:host {
+  display: block;
+}
+
+:host,
+:host * {
+  box-sizing: border-box;
+}
+
+.census-form {
+  padding: 16px;
+}

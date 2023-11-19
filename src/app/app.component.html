@@ -1,3 +1,33 @@
+<div class="app">
+  <!-- Sección de Navegación -->
+  <div class="app__header">
+    <div class="app__header-wrapper">
+      <div class="app__logo">
+        <img height="40px" width="40px" src="assets/ecs-logo.png" alt="Logo" />
+        <h2>ECS</h2>
+      </div>
+      <div class="app__navigation">
+        <app-link-button text="Home" link="/"></app-link-button>
+        <app-link-button
+          text="Census Form"
+          link="/census-form"
+        ></app-link-button>
+        <app-link-button text="Feedback" link="/feedback"></app-link-button>
+        <app-link-button text="Sign In" link="/signin"></app-link-button>
+        <app-link-button text="Sign Up" link="/signup"></app-link-button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sección de Contenido -->
+  <div class="app__content">
+    <router-outlet></router-outlet>
+  </div>
+
+  <!-- Sección de Pie de Página -->
+  <div class="app__footer">Aqui el footer</div>
+</div>
+
 <div class="center-container">
   <!-- Sección de Componentes de la Página -->
   <div class="center-content">
@@ -10,7 +40,10 @@
     ></app-hero>
     <hr />
 
-    <app-section-title [title]="title" [subtitle]="subtitle"></app-section-title>
+    <app-section-title
+      [title]="title"
+      [subtitle]="subtitle"
+    ></app-section-title>
     <hr />
 
     <!-- Sección de Botones Personalizados -->
@@ -28,12 +61,30 @@
     <hr />
 
     <!-- Sección de Botones de Acción -->
-    <app-button [buttonText]="'Contact'" [isFinish]="true" (click)="contactButtonClick()"></app-button>
-    <app-link-button [title]="'About Us'" [text]="'Learn more about us'" [link]="'/about'"></app-link-button>
-    <app-button [buttonText]="'Login'" (click)="loginButtonClick()"></app-button>
-    <app-button [buttonText]="'Enviar'" (click)="enviarButtonClick()"></app-button>
-    <app-button [buttonText]="'Volver'" (click)="volverButtonClick()"></app-button>
-    <app-button [buttonText]="'Enter'" (click)="enterButtonClick()"></app-button>
-    <app-button [buttonText]="'Registrar'" (click)="registrarButtonClick()"></app-button>
+    <app-button
+      [buttonText]="'Login'"
+      (click)="loginButtonClick()"
+    ></app-button>
+    <app-button
+      [buttonText]="'Enviar'"
+      (click)="enviarButtonClick()"
+    ></app-button>
+    <app-button
+      [buttonText]="'Volver'"
+      (click)="volverButtonClick()"
+    ></app-button>
+    <app-button
+      [buttonText]="'Enter'"
+      (click)="enterButtonClick()"
+    ></app-button>
+    <app-button
+      [buttonText]="'Registrar'"
+      (click)="registrarButtonClick()"
+    ></app-button>
+    <app-button
+      [buttonText]="'Contact'"
+      [isFinish]="true"
+      (click)="contactButtonClick()"
+    ></app-button>
   </div>
 </div>
