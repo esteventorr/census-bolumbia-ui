@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { FeedbackRoutingModule } from './feedback-routing.module';
 import { FeedbackComponent } from './feedback.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { FeedbackComponent } from './feedback.component';
   ],
   imports: [
     CommonModule,
-    FeedbackRoutingModule
+    FeedbackRoutingModule,
+    ReactiveFormsModule,
   ]
 })
 export class FeedbackModule { }

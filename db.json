@@ -1,0 +1,70 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "user1",
+      "password": "pass1"
+    }
+  ],
+  "login": [
+    {
+      "id": 1,
+      "token": "fake-jwt-token"
+    }
+  ],
+  "responses": [
+    {
+      "responses": [
+        {
+          "questionId": "fullName",
+          "response": ""
+        },
+        {
+          "questionId": "age",
+          "response": ""
+        },
+        {
+          "questionId": "gender",
+          "response": ""
+        },
+        {
+          "questionId": "educationLevel",
+          "response": ""
+        },
+        {
+          "questionId": "occupation",
+          "response": ""
+        },
+        {
+          "questionId": "hasDisabilities",
+          "response": ""
+        },
+        {
+          "questionId": "maritalStatus",
+          "response": "Domestic partnership"
+        },
+        {
+          "questionId": "monthlyIncomeRange",
+          "response": "$2,001 to $5,000"
+        },
+        {
+          "questionId": "hasHealthInsurance",
+          "response": ""
+        },
+        {
+          "questionId": "householdSize",
+          "response": ""
+        },
+        {
+          "questionId": "housingType",
+          "response": ""
+        },
+        {
+          "questionId": "internetConnectionType",
+          "response": ""
+        }
+      ],
+      "id": 1
+    }
+  ]
+}

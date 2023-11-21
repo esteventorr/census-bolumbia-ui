@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { CensusFormRoutingModule } from './census-form-routing.module';
 import { CensusFormComponent } from './census-form.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { CensusFormComponent } from './census-form.component';
   ],
   imports: [
     CommonModule,
-    CensusFormRoutingModule
+    CensusFormRoutingModule,
+    ReactiveFormsModule
   ]
 })
 export class CensusFormModule { }

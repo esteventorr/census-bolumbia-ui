@@ -9,6 +9,7 @@ import { CardModule } from './components/card/card.module';
 import { HeroModule } from './components/hero/hero.module';
 import { LinkButtonModule } from './components/link-button/link-button.module';
 import { SectionTitleModule } from './components/section-title/section-title.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [AppComponent],
@@ -21,6 +22,7 @@ import { SectionTitleModule } from './components/section-title/section-title.mod
     HeroModule,
     LinkButtonModule,
     SectionTitleModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
