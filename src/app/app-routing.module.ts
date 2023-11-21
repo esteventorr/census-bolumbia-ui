@@ -14,11 +14,6 @@ const routes: Routes = [
       import('./pages/signin/signin.module').then((m) => m.SigninModule),
   },
   {
-    path: ROUTES.SIGNUP,
-    loadChildren: () =>
-      import('./pages/signup/signup.module').then((m) => m.SignupModule),
-  },
-  {
     path: ROUTES.FEEDBACK,
     loadChildren: () =>
       import('./pages/feedback/feedback.module').then((m) => m.FeedbackModule),
