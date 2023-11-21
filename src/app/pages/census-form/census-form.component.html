@@ -1,3 +1,172 @@
-<div class="census-form">
-  <p>census-form works!</p>
-</div>
+<form class="census-form" [formGroup]="censusForm" (ngSubmit)="onSubmit()">
+  <!-- Text input for full name -->
+  <div>
+    <label>Full name of the resident:</label>
+    <input type="text" formControlName="fullName" />
+  </div>
+
+  <!-- Number input for age -->
+  <div>
+    <label>Age of the resident:</label>
+    <input type="number" formControlName="age" />
+  </div>
+
+  <!-- Radio buttons for gender -->
+  <div class="radio-group">
+    <label>Gender:</label>
+    <input type="radio" formControlName="gender" value="Male" /> Male
+    <input type="radio" formControlName="gender" value="Female" /> Female
+    <input type="radio" formControlName="gender" value="Non-binary" />
+    Non-binary
+    <input type="radio" formControlName="gender" value="Prefer not to say" />
+    Prefer not to say
+  </div>
+
+  <!-- Radio buttons for education level -->
+  <div class="radio-group">
+    <label>Highest level of education attained:</label>
+    <input
+      type="radio"
+      formControlName="educationLevel"
+      value="No formal education"
+    />
+    No formal education
+    <input type="radio" formControlName="educationLevel" value="Elementary" />
+    Elementary
+    <input type="radio" formControlName="educationLevel" value="Secondary" />
+    Secondary
+    <input
+      type="radio"
+      formControlName="educationLevel"
+      value="Technical/Vocational"
+    />
+    Technical/Vocational
+    <input
+      type="radio"
+      formControlName="educationLevel"
+      value="Undergraduate"
+    />
+    Undergraduate
+    <input type="radio" formControlName="educationLevel" value="Graduate" />
+    Graduate
+  </div>
+
+  <!-- Text input for occupation -->
+  <div>
+    <label>Current occupation:</label>
+    <input type="text" formControlName="occupation" />
+  </div>
+
+  <!-- Radio buttons for disabilities -->
+  <div class="radio-group">
+    <label>Do you have any disabilities?</label>
+    <input type="radio" formControlName="hasDisabilities" value="Yes" /> Yes
+    <input type="radio" formControlName="hasDisabilities" value="No" /> No
+  </div>
+
+  <!-- Radio buttons for marital status -->
+  <div class="radio-group">
+    <label>Marital status:</label>
+    <input type="radio" formControlName="maritalStatus" value="Single" />
+    Single
+    <input type="radio" formControlName="maritalStatus" value="Married" />
+    Married
+    <input
+      type="radio"
+      formControlName="maritalStatus"
+      value="Domestic partnership"
+    />
+    Domestic partnership
+    <input type="radio" formControlName="maritalStatus" value="Divorced" />
+    Divorced
+    <input type="radio" formControlName="maritalStatus" value="Widowed" />
+    Widowed
+  </div>
+
+  <!-- Radio buttons for monthly income range -->
+  <div class="radio-group">
+    <label>Monthly income range:</label>
+    <input
+      type="radio"
+      formControlName="monthlyIncomeRange"
+      value="Less than $1,000"
+    />
+    Less than $1,000
+    <input
+      type="radio"
+      formControlName="monthlyIncomeRange"
+      value="$1,000 to $2,000"
+    />
+    $1,000 to $2,000
+    <input
+      type="radio"
+      formControlName="monthlyIncomeRange"
+      value="$2,001 to $5,000"
+    />
+    $2,001 to $5,000
+    <input
+      type="radio"
+      formControlName="monthlyIncomeRange"
+      value="More than $5,000"
+    />
+    More than $5,000
+  </div>
+
+  <!-- Radio buttons for health insurance -->
+  <div class="radio-group">
+    <label>Do you have health insurance?</label>
+    <input type="radio" formControlName="hasHealthInsurance" value="Yes" />
+    Yes
+    <input type="radio" formControlName="hasHealthInsurance" value="No" />
+    No
+  </div>
+
+  <!-- Radio buttons for number of people in the household -->
+  <div class="radio-group">
+    <label>Number of people in the household:</label>
+    <input type="radio" formControlName="householdSize" value="1" /> 1
+    <input type="radio" formControlName="householdSize" value="2-3" /> 2-3
+    <input type="radio" formControlName="householdSize" value="4-5" /> 4-5
+    <input type="radio" formControlName="householdSize" value="6 or more" />
+    6 or more
+  </div>
+
+  <!-- Radio buttons for type of housing -->
+  <div class="radio-group">
+    <label>Type of housing:</label>
+    <input type="radio" formControlName="housingType" value="House" /> House
+    <input type="radio" formControlName="housingType" value="Apartment" />
+    Apartment
+    <input type="radio" formControlName="housingType" value="Room" /> Room
+    <input type="radio" formControlName="housingType" value="Other" /> Other
+  </div>
+
+  <!-- Radio buttons for internet connection type -->
+  <div class="radio-group">
+    <label>What type of internet connection do you have at home?</label>
+    <input
+      type="radio"
+      formControlName="internetConnectionType"
+      value="Fiber optic"
+    />
+    Fiber optic
+    <input type="radio" formControlName="internetConnectionType" value="DSL" />
+    DSL
+    <input
+      type="radio"
+      formControlName="internetConnectionType"
+      value="Cable"
+    />
+    Cable
+    <input
+      type="radio"
+      formControlName="internetConnectionType"
+      value="Satellite"
+    />
+    Satellite
+    <input type="radio" formControlName="internetConnectionType" value="None" />
+    None
+  </div>
+
+  <button type="submit">Submit</button>
+</form>

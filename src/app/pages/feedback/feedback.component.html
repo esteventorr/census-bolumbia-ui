@@ -1,1 +1,34 @@
-<p>feedback works!</p>
+<div class="feedback">
+  <h2 class="feedback__title">Contribute to Our Progress</h2>
+  <p class="feedback__description">
+    As the Republic of Bolumbia embraces the innovative Electronic Census System
+    (ECS), we invite our citizens to play a pivotal role in this transformation.
+    Your insights and suggestions are invaluable to us. They not only aid in
+    enhancing the efficacy of our ECS but also reflect the proactive spirit of
+    our nation. We deeply appreciate your time and effort in sharing your
+    thoughts.
+  </p>
+
+  <form
+    [formGroup]="feedbackForm"
+    (ngSubmit)="onSubmit()"
+    class="feedback__form"
+  >
+    <div class="feedback__form-group">
+      <label for="suggestions" class="feedback__label"
+        >Share Your Insights:</label
+      >
+      <textarea
+        formControlName="suggestions"
+        id="suggestions"
+        maxlength="1000"
+        rows="4"
+        placeholder="Your thoughts and suggestions..."
+        class="feedback__textarea"
+      ></textarea>
+    </div>
+    <button type="submit" class="feedback__submit-button">
+      Submit Feedback
+    </button>
+  </form>
+</div>
