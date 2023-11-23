@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { AuthService } from 'src/app/services/auth/auth.service';
+import { LayoutService } from 'src/app/services/layout/layout.service';
 
 @Component({
   selector: 'app-signin',
@@ -8,9 +9,16 @@ import { AuthService } from 'src/app/services/auth/auth.service';
   styleUrls: ['./signin.component.scss'],
 })
 export class SigninComponent {
+  title: string = 'ECS: Sign In';
   loginForm!: FormGroup;
 
-  constructor(private fb: FormBuilder, private authService: AuthService) {}
+  constructor(
+    private fb: FormBuilder,
+    private authService: AuthService,
+    layoutService: LayoutService
+  ) {
+    layoutService.setPageTitle(this.title);
+  }
 
   ngOnInit(): void {
     this.loginForm = this.fb.group({

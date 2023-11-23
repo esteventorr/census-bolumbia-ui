@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-link-button',
@@ -8,4 +8,10 @@ import { Component, Input } from '@angular/core';
 export class LinkButtonComponent {
   @Input() link: string = '';
   @Input() text: string = '';
+
+  @Output() click = new EventEmitter<void>();
+
+  onClick() {
+    this.click.emit();
+  }
 }
