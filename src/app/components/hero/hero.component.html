@@ -1,5 +1,14 @@
-<div class="hero" style="background-image: url('{{ backgroundImageUrl }}')">
-  <h1>{{ title }}</h1>
-  <p>{{ subtitle }}</p>
-  <a [routerLink]="link" class="hero-button">{{ buttonText }}</a>
+<div class="hero">
+  <div class="hero__left">
+    <app-section-title
+      [title]="title"
+      [subtitle]="subtitle"
+    ></app-section-title>
+    <div class="hero__action">
+      <a class="button" [routerLink]="link">{{ buttonText }}</a>
+    </div>
+  </div>
+  <div class="hero__right">
+    <img class="hero__image" src="{{ backgroundImageUrl }}" alt="" />
+  </div>
 </div>

@@ -1,12 +1,162 @@
-/* You can add global styles to this file, and also import other style files */
-html, body {
-  height: 100%;
+body {
+  --main: #007bff;
+  --main-dark: #0056b3;
+  --main-darker: #004080;
+}
+
+html,
+body {
   width: 100%;
   margin: 0;
   padding: 0;
   background-color: #fdfdfd;
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  color: #333;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  position: relative;
 }
 
-html *, body * {
+html *,
+body * {
   box-sizing: border-box;
+  transition: all 0.3s ease-in-out;
+  margin: 0px;
+  padding: 0px;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  color: white;
+  background-color: var(--main);
+  border: 1px solid var(--main-dark);
+  box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 16px;
+  text-align: center;
+  width: 100%;
+  font-size: 24px;
+  font-weight: 600;
+  height: auto;
+  text-decoration: none;
+}
+.button:disabled {
+  background-color: #c2c2c2;
+  cursor: not-allowed;
+  border: 1px solid #c2c2c2;
+  color: #808080;
+}
+
+.button:disabled:hover {
+  background-color: #c2c2c2;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  display: inline-block;
+
+  &:hover,
+  &:active,
+  &:visited,
+  &:focus {
+    color: inherit;
+    outline: none;
+  }
+}
+
+a.button:visited {
+  color: #ffffff;
+  background-color: var(--main);
+}
+
+a.button:hover {
+  color: #ffffff;
+  background-color: var(--main-dark);
+}
+
+a.button:active {
+  color: #ffffff;
+  background-color: var(--main-darker);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-size: 32px;
+}
+
+h2 {
+  font-size: 24px;
+}
+
+h3 {
+  font-size: 16px;
+}
+
+h4 {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+h5 {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+h6 {
+  font-size: 16px;
+  font-weight: 300;
+}
+
+// small devices
+@media (max-width: 768px) {
+}
+
+.page {
+  margin: 0 auto;
+  max-width: 1080px;
+  height: calc(100vh - 100px);
+  padding: 0;
+}
+
+.academic-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  padding: 0;
+  margin: 0;
+  font-size: 12px;
+  height: 24px;
+
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  text-align: center;
+  background-color: #fff;
+
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  & p {
+    margin: 0;
+    padding: 0;
+  }
 }

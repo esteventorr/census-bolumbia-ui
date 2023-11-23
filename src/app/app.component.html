@@ -1,89 +1,54 @@
-<div class="app">
-  <!-- Sección de Navegación -->
-  <div class="app__header">
-    <div class="app__header-wrapper">
-      <div class="app__logo">
-        <img height="40px" width="40px" src="assets/ecs-logo.png" alt="Logo" />
-        <h2>ECS</h2>
-      </div>
-      <div class="app__navigation">
-        <app-link-button text="Home" link="/"></app-link-button>
-        <app-link-button
-          text="Census Form"
-          link="/census-form"
-        ></app-link-button>
-        <app-link-button text="Feedback" link="/feedback"></app-link-button>
-        <app-link-button text="Sign In" link="/signin"></app-link-button>
-      </div>
+<div class="app__header">
+  <div class="app__header-wrapper">
+    <div class="app__logo" (click)="navigateToHome()" tabindex="0">
+      <img height="40px" width="40px" src="assets/ecs-logo.png" alt="Logo" />
+      <h1>ECS</h1>
+    </div>
+    <h2 class="app__title">{{ title }}</h2>
+    <button class="app__menu-button button" (click)="toggleMenu()">
+      &#9776;
+    </button>
+    <!-- Botón de hamburguesa -->
+    <div class="app__navigation" [class.open]="menuOpen">
+      <app-link-button
+        text="Home"
+        link="/"
+        (click)="closeMenu()"
+      ></app-link-button>
+      <app-link-button
+        text="Census Form"
+        link="/census-form"
+        (click)="closeMenu()"
+      ></app-link-button>
+      <app-link-button
+        text="Feedback"
+        link="/feedback"
+        (click)="closeMenu()"
+      ></app-link-button>
+      <app-link-button
+        text="Sign In"
+        link="/signin"
+        (click)="closeMenu()"
+      ></app-link-button>
     </div>
   </div>
-
-  <!-- Sección de Contenido -->
-  <div class="app__content">
-    <router-outlet></router-outlet>
-  </div>
-
-  <!-- Sección de Pie de Página -->
-  <div class="app__footer">Aqui el footer</div>
+</div>
+<h2 class="app__title desktop">{{ title }}</h2>
+<div class="app__content">
+  <router-outlet></router-outlet>
 </div>
 
-<div class="center-container">
-  <!-- Sección de Componentes de la Página -->
-  <div class="center-content">
-    <app-hero
-      [backgroundImageUrl]="imageUrl"
-      [title]="title"
-      [subtitle]="subtitle"
-      [link]="link"
-      [buttonText]="buttonText"
-    ></app-hero>
-    <hr />
-
-    <app-section-title
-      [title]="title"
-      [subtitle]="subtitle"
-    ></app-section-title>
-    <hr />
-
-    <!-- Sección de Botones Personalizados -->
-    <app-button [buttonText]="title" [isFinish]="true"></app-button>
-    <hr />
-
-    <!-- Sección de Tarjeta con Enlace -->
-    <app-card
-      [title]="title"
-      [imageUrl]="imageUrl"
-      [content]="subtitle"
-      [buttonText]="buttonText"
-      [link]="link"
-    ></app-card>
-    <hr />
-
-    <!-- Sección de Botones de Acción -->
-    <app-button
-      [buttonText]="'Login'"
-      (click)="loginButtonClick()"
-    ></app-button>
-    <app-button
-      [buttonText]="'Enviar'"
-      (click)="enviarButtonClick()"
-    ></app-button>
-    <app-button
-      [buttonText]="'Volver'"
-      (click)="volverButtonClick()"
-    ></app-button>
-    <app-button
-      [buttonText]="'Enter'"
-      (click)="enterButtonClick()"
-    ></app-button>
-    <app-button
-      [buttonText]="'Registrar'"
-      (click)="registrarButtonClick()"
-    ></app-button>
-    <app-button
-      [buttonText]="'Contact'"
-      [isFinish]="true"
-      (click)="contactButtonClick()"
-    ></app-button>
+<div class="app__footer">
+  <div id="contact-info">
+    <h3>Contact Information</h3>
+    <div class="contact-info__detail">
+      <p>Phone: (+57) 321 888 9999</p>
+      <p class="cat">(҂ ㆆᆽㆆ)ᕤ</p>
+      <p>
+        Email:
+        <a href="mailto:censusoficial@gmail.com">CensusOficial@gmail.com</a>
+      </p>
+    </div>
   </div>
+  <p>© 2023 ECS Electronic Census System</p>
 </div>

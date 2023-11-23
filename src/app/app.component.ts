@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
+import { LayoutService } from './services/layout/layout.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -6,32 +8,36 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'census-bolumbia-ui';
+  title = 'census-bolumbia';
   subtitle = 'Census Bolumbia';
   link = '/';
   buttonText = 'Learn More';
   imageUrl = 'https://picsum.photos/200/300';
-  
-  contactButtonClick() {
-    console.log('Botón "Contact" clickeado');
+
+  menuOpen = false;
+
+  constructor(layoutService: LayoutService, private router: Router) {
+    layoutService.getPageTitle().subscribe((title) => {
+      this.title = title;
+    });
   }
-  // Dentro de la clase AppComponent
-  loginButtonClick() {
-    console.log('Botón "Login" clickeado');
-}
-  enviarButtonClick() {
-    console.log('Botón "Enviar" clickeado');
-}
-  volverButtonClick() {
-  console.log('Botón "Volver" clickeado');
 
-}
-  enterButtonClick() {
-  console.log('Botón "Enter" clickeado');
-}
-// Dentro de la clase AppComponent
-  registrarButtonClick() {
-  console.log('Botón "Registrar" clickeado');
-}
+  toggleMenu() {
+    this.menuOpen = !this.menuOpen;
+  }
 
+  closeMenu() {
+    this.menuOpen = false;
+  }
+
+  navigateToHome() {
+    this.router.navigate(['/']);
+  }
+
+  @HostListener('document:click', ['$event'])
+  clickOut(event: any) {
+    if (!event.target.closest('.app__header')) {
+      this.menuOpen = false;
+    }
+  }
 }

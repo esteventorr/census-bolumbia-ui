@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { LayoutService } from 'src/app/services/layout/layout.service';
 
 @Component({
   selector: 'app-feedback',
@@ -7,9 +8,12 @@ import { FormBuilder, FormGroup } from '@angular/forms';
   styleUrls: ['./feedback.component.scss'],
 })
 export class FeedbackComponent {
+  title: string = 'ECS: Feedback';
   feedbackForm!: FormGroup;
 
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder, layoutService: LayoutService) {
+    layoutService.setPageTitle(this.title);
+  }
 
   ngOnInit(): void {
     this.feedbackForm = this.fb.group({
