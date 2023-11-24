@@ -1,4 +1,6 @@
-export const API_URL = 'http://34.172.131.80';
+import { environment } from 'src/environments/environment';
+
+export const API_URL = environment.backendUrl;
 
 export const ENDPOINTS = {
   LOGIN: `${API_URL}/auth/login`,

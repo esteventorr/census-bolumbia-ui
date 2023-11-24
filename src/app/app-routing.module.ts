@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ROUTES } from './constants/routes';
+import { authGuard } from './guards/auth.guard';
 
 const routes: Routes = [
   {
@@ -15,11 +16,13 @@ const routes: Routes = [
   },
   {
     path: ROUTES.FEEDBACK,
+    canActivate: [authGuard],
     loadChildren: () =>
       import('./pages/feedback/feedback.module').then((m) => m.FeedbackModule),
   },
   {
     path: ROUTES.CENSUS_FORM,
+    canActivate: [authGuard],
     loadChildren: () =>
       import('./pages/census-form/census-form.module').then(
         (m) => m.CensusFormModule

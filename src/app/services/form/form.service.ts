@@ -28,4 +28,8 @@ export class FormService {
   generateReport(reportData: any) {
     return this.http.post(ENDPOINTS.POST_GEN_SUPPORT_REPORT, reportData);
   }
+
+  sendFeedback(feedbackData: any) {
+    return this.http.post(ENDPOINTS.POST_FEEDBACK, feedbackData);
+  }
 }
