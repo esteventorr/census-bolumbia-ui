@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: census-bolumbia-ui
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: census-bolumbia-ui
+  template:
+    metadata:
+      labels:
+        app: census-bolumbia-ui
+    spec:
+      containers:
+        - name: census-bolumbia-ui
+          image: us-central1-docker.pkg.dev/laboratorioeafitkubernetes/ecs-bolumbia-front/ecs:1
+          ports:
+            - containerPort: 80
