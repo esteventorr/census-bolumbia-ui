@@ -1,4 +1,4 @@
-export const API_URL = 'http://localhost:3000';
+export const API_URL = 'http://34.172.131.80';
 
 export const ENDPOINTS = {
   LOGIN: `${API_URL}/auth/login`,
