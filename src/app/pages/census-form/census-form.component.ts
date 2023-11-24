@@ -1,7 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, FormArray, FormControl } from '@angular/forms';
-import { CensusQuestion, CensusResponse } from '../../interfaces/form';
-import { CENSUS_QUESTIONS } from '../../constants/form';
+import { Component } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { CensusFormAnswer } from '../../interfaces/form';
 import { FormService } from '../../services/form/form.service';
 import { LayoutService } from 'src/app/services/layout/layout.service';
 
@@ -11,7 +10,7 @@ import { LayoutService } from 'src/app/services/layout/layout.service';
   styleUrls: ['./census-form.component.scss'],
 })
 export class CensusFormComponent {
-  title : string = 'ECS: Census Form';
+  title: string = 'ECS: Census Form';
   censusForm: FormGroup;
 
   constructor(
@@ -38,14 +37,13 @@ export class CensusFormComponent {
   }
 
   onSubmit() {
-    // Estructura la respuesta para imprimir en la consola.
     const formResponses = Object.keys(this.censusForm.value).map((key) => {
-      return { questionId: key, response: this.censusForm.value[key] };
+      return { question_id: key, answer: this.censusForm.value[key] };
     });
 
-    console.log({ responses: formResponses });
+    console.log(formResponses as CensusFormAnswer[]);
 
-    this.formService.submitResponses(formResponses).subscribe({
+    this.formService.sendAnswers(formResponses).subscribe({
       next: (response) => {
         console.log('Respuestas enviadas:', response);
       },
