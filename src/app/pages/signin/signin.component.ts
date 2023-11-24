@@ -28,11 +28,11 @@ export class SigninComponent {
   }
 
   onSubmit(): void {
+    console.log('Login form value:', this.loginForm.value);
     if (this.loginForm.valid) {
       this.authService.login(this.loginForm.value).subscribe({
         next: (response) => {
           console.log('Login successful:', response);
-          // Manejar la respuesta del login aquí
         },
         error: (error) => {
           console.error('Login error:', error);
