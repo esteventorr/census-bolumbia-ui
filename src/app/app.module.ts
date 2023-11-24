@@ -9,7 +9,8 @@ import { CardModule } from './components/card/card.module';
 import { HeroModule } from './components/hero/hero.module';
 import { LinkButtonModule } from './components/link-button/link-button.module';
 import { SectionTitleModule } from './components/section-title/section-title.module';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { AuthInterceptor } from 'auth.interceptor';
 
 @NgModule({
   declarations: [AppComponent],
@@ -24,7 +25,13 @@ import { HttpClientModule } from '@angular/common/http';
     SectionTitleModule,
     HttpClientModule,
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true,
+    },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

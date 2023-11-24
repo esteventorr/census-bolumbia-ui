@@ -43,13 +43,13 @@ export class CensusFormComponent {
 
     console.log(formResponses as CensusFormAnswer[]);
 
-    this.formService.sendAnswers(formResponses).subscribe({
+/*     this.formService.sendAnswers(formResponses).subscribe({
       next: (response) => {
         console.log('Respuestas enviadas:', response);
       },
       error: (error) => {
         console.error('Error al enviar respuestas:', error);
       },
-    });
+    }); */
   }
 }

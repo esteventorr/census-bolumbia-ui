@@ -9,6 +9,8 @@ export interface CensusQuestion {
 
 export interface CensusFormAnswer {
   question_id: number | string;
+  person_id: number;
+  people_number: number;
   answer: string;
 }
 
@@ -23,9 +25,14 @@ export interface LoginRequest {
 }
 
 export interface LoginResponse {
-  ecn: string;
-  cfn: number;
-  direction: string;
+  token: {
+    data: {
+      ecn: string;
+      cfn: number;
+      direction: string;
+    };
+    token: string;
+  };
 }
 
 export interface LoginSupportRequest {
