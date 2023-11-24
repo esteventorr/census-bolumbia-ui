@@ -1,4 +1,42 @@
-<form class="census-form" [formGroup]="censusForm" (ngSubmit)="onSubmit()">
+<form [formGroup]="mainForm">
+  <div>
+    <label for="totalPeople">Total number of people:</label>
+    <select formControlName="totalPeople">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+    </select>
+  </div>
+</form>
+<div>
+  <p>Filling out information for person {{ currentPersonIndex + 1 }}</p>
+</div>
+
+<button
+  type="button"
+  (click)="previousPerson()"
+  [disabled]="currentPersonIndex === 0"
+>
+  Previous
+</button>
+<button
+  type="button"
+  (click)="nextPerson()"
+  [disabled]="currentPersonIndex === mainForm.value.totalPeople - 1"
+>
+  Next
+</button>
+<button type="button" [disabled]="!allFormsValid()" (click)="onSubmitAll()">
+  Finalize census
+</button>
+<form
+  class="census-form"
+  *ngIf="personForms[currentPersonIndex]"
+  [formGroup]="personForms[currentPersonIndex]"
+  (ngSubmit)="onSubmitCurrent()"
+>
   <!-- Text input for full name -->
   <div>
     <label>Full name of the resident:</label>
@@ -260,5 +298,11 @@
     >
   </div>
 
-  <button class="button" type="submit">Submit</button>
+  <button
+    class="button"
+    type="submit"
+    [disabled]="!personForms[currentPersonIndex].valid"
+  >
+    Save person form
+  </button>
 </form>
